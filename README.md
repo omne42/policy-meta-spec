@@ -2,18 +2,44 @@
 
 Canonical policy meta semantics shared by `agent-exec-gateway`, `safe-fs-tools`, and `omne-agent`.
 
-This repository is the single source of truth for:
+## What This Repository Contains
 
-- stable names and meanings of permission meta fields,
-- canonical JSON Schema for config-level interoperability,
-- default risk profiles,
-- migration guidance,
-- a minimal Rust types crate for compile-time reuse.
+- Canonical field names and immutable semantic meanings.
+- JSON Schema contract for cross-repository interoperability.
+- Baseline profile presets.
+- Migration guidance.
+- Minimal Rust types crate for compile-time reuse.
+- Versioned documentation site (Next.js + GitHub Pages).
 
-See:
+## Documentation
 
-- `SPEC.md`
-- `schema/policy-meta.v1.json`
-- `profiles/`
-- `guides/migration-v1.md`
+- Primary docs source: `docs-site/content/`
+- Local docs app: `docs-site/`
+- Core spec file: `SPEC.md`
+- Schema: `schema/policy-meta.v1.json`
+- Profiles: `profiles/*.yaml`
+- Migration guide: `guides/migration-v1.md`
+
+Run docs locally:
+
+```bash
+cd docs-site
+npm install
+npm run dev
+```
+
+## GitHub Pages Deployment
+
+GitHub Pages deployment is handled by:
+
+- `.github/workflows/docs-pages.yml`
+
+The workflow builds `docs-site` as static output and publishes `docs-site/out` to GitHub Pages.
+
+## Rust Types
+
+Rust crate path:
+
 - `rust/policy-meta/`
+
+The crate includes canonical enums, serde alias parsing, and normalization tests.
