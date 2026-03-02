@@ -64,4 +64,4 @@ Aliases are accepted only at parse boundary for ergonomics.
 - Profiles: `profiles/*.yaml`
 - Migration guide: `guides/migration-v1.md`
 - Rust types: `rust/policy-meta/`
-- Versioned docs site: `docs-site/`
+- Versioned docs source: `docs/` + `mkdocs.yml`

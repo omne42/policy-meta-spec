@@ -1,0 +1,49 @@
+site_name: policy-meta-spec
+site_description: Canonical policy meta semantics for interoperable agent execution tooling.
+site_url: https://omne42.github.io/policy-meta-spec/
+repo_url: https://github.com/omne42/policy-meta-spec
+repo_name: omne42/policy-meta-spec
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  language: en
+  features:
+    - navigation.sections
+    - navigation.indexes
+    - navigation.top
+    - content.code.copy
+
+markdown_extensions:
+  - admonition
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+
+plugins:
+  - search
+
+extra:
+  version:
+    provider: mike
+
+nav:
+  - Introduction: index.md
+  - Getting Started:
+      - getting-started/index.md
+      - Quickstart: getting-started/quickstart.md
+  - Guides:
+      - guides/index.md
+      - Core Model: guides/core-model.md
+      - Risk Profiles: guides/risk-profiles.md
+      - Alias and Normalization: guides/alias-normalization.md
+      - Migration to v1: guides/migration-v1.md
+      - AI and Agent Consumption: guides/ai-agent-consumption.md
+  - Reference:
+      - reference/index.md
+      - Schema Reference: reference/schema-reference.md
+      - Rust Reference: reference/rust-reference.md
+      - Governance and Versioning: reference/governance-versioning.md

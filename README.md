@@ -9,37 +9,27 @@ Canonical policy meta semantics shared by `agent-exec-gateway`, `safe-fs-tools`,
 - Baseline profile presets.
 - Migration guidance.
 - Minimal Rust types crate for compile-time reuse.
-- Versioned documentation site (Next.js + GitHub Pages).
+- Fully automated versioned documentation deployment to GitHub Pages.
 
-## Documentation
+## Core Artifacts
 
-- Primary docs source: `docs-site/content/`
-- Local docs app: `docs-site/`
-- Core spec file: `SPEC.md`
+- Spec: `SPEC.md`
 - Schema: `schema/policy-meta.v1.json`
 - Profiles: `profiles/*.yaml`
 - Migration guide: `guides/migration-v1.md`
+- Rust crate: `rust/policy-meta/`
 
-Run docs locally:
+## Documentation (Automated)
+
+- Docs source: `docs/`
+- MkDocs config: `mkdocs.yml`
+- Auto deployment workflow: `.github/workflows/docs-pages.yml`
+
+GitHub Pages publishing is fully automated via GitHub Actions with version selector support powered by `mike` (`latest`, `v1`, ...).
+
+## Local Docs Build
 
 ```bash
-cd docs-site
-npm install
-npm run dev
+pip install mkdocs mkdocs-material mike pymdown-extensions
+mkdocs build --strict
 ```
-
-## GitHub Pages Deployment
-
-GitHub Pages deployment is handled by:
-
-- `.github/workflows/docs-pages.yml`
-
-The workflow builds `docs-site` as static output and publishes `docs-site/out` to GitHub Pages.
-
-## Rust Types
-
-Rust crate path:
-
-- `rust/policy-meta/`
-
-The crate includes canonical enums, serde alias parsing, and normalization tests.
