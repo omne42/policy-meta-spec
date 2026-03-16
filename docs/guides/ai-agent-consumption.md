@@ -16,7 +16,7 @@ human or system input
 ## Recommendations
 
 - pass canonical values to model/tool context,
-- include explicit spec version,
+- include explicit spec version in persisted/profile artifacts,
 - reject free-form synonyms not in canonical/alias tables,
 - log raw token and normalized token for traceability.
 

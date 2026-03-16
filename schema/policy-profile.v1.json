@@ -1,8 +1,8 @@
 {
-  "$id": "https://omne42.dev/schema/policy-meta.v1.json",
+  "$id": "https://omne42.dev/schema/policy-profile.v1.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "additionalProperties": false,
-  "description": "Canonical policy metadata fragment. Canonical fields are reusable across repositories; field presence requirements are defined by embedding contracts. Optional version metadata may be included by persisted artifacts and preset files.",
+  "description": "Versioned preset profile built on top of the canonical policy metadata fragment.",
   "properties": {
     "decision": {
       "enum": [
@@ -43,6 +43,12 @@
       "type": "string"
     }
   },
-  "title": "PolicyMetaV1",
+  "required": [
+    "execution_isolation",
+    "risk_profile",
+    "version",
+    "write_scope"
+  ],
+  "title": "PolicyProfileV1",
   "type": "object"
 }

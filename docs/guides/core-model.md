@@ -4,6 +4,7 @@
 
 | Field | Allowed Values | Purpose |
 | --- | --- | --- |
+| `version` | `1` | Optional artifact metadata for versioned persisted/profile objects. |
 | `risk_profile` | `safe`, `standard`, `proactive`, `danger` | High-level risk posture label. |
 | `write_scope` | `read_only`, `workspace_write`, `full_access` | Filesystem write reach intent. |
 | `execution_isolation` | `none`, `best_effort`, `strict` | Strength of execution boundary guarantees. |
@@ -46,6 +47,12 @@ Represents approval behavior:
 - `prompt`
 - `prompt_strict`
 - `deny`
+
+## Contract Layers
+
+- `policy-meta.v1.json` is the reusable metadata fragment.
+- `policy-profile.v1.json` is the versioned preset/profile contract.
+- Embedding APIs may require a subset of fields on top of the fragment.
 
 ## Normative Rules
 

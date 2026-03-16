@@ -10,6 +10,11 @@ This specification is the canonical semantic contract for policy metadata used b
 - `safe-fs-tools`
 - `omne-agent`
 
+The canonical contract is intentionally split into:
+
+- a reusable metadata fragment (`policy-meta.v1.json`),
+- versioned preset/profile artifacts built on top of that fragment.
+
 ## Canonical Fields
 
 - `risk_profile`: `safe | standard | proactive | danger`
@@ -17,7 +22,23 @@ This specification is the canonical semantic contract for policy metadata used b
 - `execution_isolation`: `none | best_effort | strict`
 - `decision`: `allow | prompt | prompt_strict | deny`
 
+Optional artifact metadata:
+
+- `version`: `1`
+
 Canonical values are case-sensitive snake_case tokens.
+
+## Contract Shape
+
+- `schema/policy-meta.v1.json` defines the canonical metadata fragment.
+- The fragment keeps canonical policy fields reusable and does not force every field to be present.
+- `version` is optional in the fragment for backward compatibility, but allowed for persisted artifacts.
+- `schema/policy-profile.v1.json` defines a versioned preset/profile object and requires:
+  - `version`
+  - `risk_profile`
+  - `write_scope`
+  - `execution_isolation`
+- `bindings/policy-meta.d.ts` is a synchronized TypeScript artifact exported from the Rust types crate.
 
 ## Naming Rationale
 
@@ -60,7 +81,9 @@ Aliases are accepted only at parse boundary for ergonomics.
 
 ## Normative Artifacts
 
-- JSON Schema: `schema/policy-meta.v1.json`
+- Canonical fragment schema: `schema/policy-meta.v1.json`
+- Profile schema: `schema/policy-profile.v1.json`
+- TypeScript bindings: `bindings/policy-meta.d.ts`
 - Profiles: `profiles/*.yaml`
 - Migration guide: `guides/migration-v1.md`
 - Rust types: `rust/policy-meta/`

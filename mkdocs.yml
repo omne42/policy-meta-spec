@@ -46,4 +46,5 @@ nav:
       - reference/index.md
       - Schema Reference: reference/schema-reference.md
       - Rust Reference: reference/rust-reference.md
+      - TypeScript Reference: reference/typescript-reference.md
       - Governance and Versioning: reference/governance-versioning.md

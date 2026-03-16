@@ -1,6 +1,6 @@
 # Risk Profiles
 
-Preset profiles are stored in `profiles/*.yaml`.
+Preset profiles are stored in `profiles/*.yaml` and validate against `schema/policy-profile.v1.json`.
 
 ## Built-In Presets
 

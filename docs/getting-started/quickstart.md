@@ -9,7 +9,7 @@ v1 canonical fields:
 - `execution_isolation`
 - `decision`
 
-## 2. Create a Canonical Policy Object
+## 2. Create a Versioned Policy Artifact
 
 ```yaml
 version: 1
@@ -21,10 +21,20 @@ decision: prompt
 
 ## 3. Validate with JSON Schema
 
-Use `schema/policy-meta.v1.json` in CI and integration tests.
+Use the schema that matches your artifact shape:
+
+- `schema/policy-meta.v1.json` for reusable metadata fragments
+- `schema/policy-profile.v1.json` for versioned preset/profile objects
+- checked-in schema files are synchronized from `rust/policy-meta/`
+- checked-in TypeScript bindings are synchronized to `bindings/policy-meta.d.ts`
 
 ```bash
-npx ajv validate -s schema/policy-meta.v1.json -d policy.json
+npx ajv validate -s schema/policy-profile.v1.json -d policy.yaml
+```
+
+```bash
+cd rust/policy-meta
+cargo run --locked --bin export-artifacts -- --check
 ```
 
 ## 4. Normalize Aliases at Parse Boundary Only
@@ -44,7 +54,7 @@ Unknown enum values or unknown object properties should be rejected.
 
 ## 6. Verify Profile Defaults
 
-Baseline profile files are in `profiles/`:
+Baseline profile files are in `profiles/` and validate against `schema/policy-profile.v1.json`:
 
 - `safe.yaml`
 - `standard.yaml`

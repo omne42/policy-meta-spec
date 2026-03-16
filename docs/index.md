@@ -6,13 +6,20 @@
 - `safe-fs-tools`
 - `omne-agent`
 
-It defines stable naming, strict canonical values, alias normalization rules, baseline profiles, and machine-readable schema artifacts.
+It defines stable naming, strict canonical values, alias normalization rules, baseline profiles, and machine-readable schema and TypeScript artifacts.
 
 ## Why This Spec Exists
 
 Distributed agent systems often diverge on policy token naming and meaning. Once divergence happens, interoperability and auditability break down quickly.
 
 This repository is the single source of truth for policy metadata semantics.
+
+The source of truth has two contract layers:
+
+- `policy-meta.v1.json`: reusable canonical metadata fragment
+- `policy-profile.v1.json`: versioned preset/profile contract
+
+Checked-in JSON Schema and TypeScript artifacts are synchronized from the Rust types crate.
 
 ## Audience
 
