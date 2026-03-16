@@ -684,6 +684,8 @@
       
         
       
+        
+      
     
     
     
@@ -781,6 +783,34 @@
     
   
     Rust Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="reference/typescript-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TypeScript Reference
   
 
     
@@ -926,10 +956,16 @@
 <li><code>safe-fs-tools</code></li>
 <li><code>omne-agent</code></li>
 </ul>
-<p>It defines stable naming, strict canonical values, alias normalization rules, baseline profiles, and machine-readable schema artifacts.</p>
+<p>It defines stable naming, strict canonical values, alias normalization rules, baseline profiles, and machine-readable schema and TypeScript artifacts.</p>
 <h2 id="why-this-spec-exists">Why This Spec Exists<a class="headerlink" href="#why-this-spec-exists" title="Permanent link">&para;</a></h2>
 <p>Distributed agent systems often diverge on policy token naming and meaning. Once divergence happens, interoperability and auditability break down quickly.</p>
 <p>This repository is the single source of truth for policy metadata semantics.</p>
+<p>The source of truth has two contract layers:</p>
+<ul>
+<li><code>policy-meta.v1.json</code>: reusable canonical metadata fragment</li>
+<li><code>policy-profile.v1.json</code>: versioned preset/profile contract</li>
+</ul>
+<p>Checked-in JSON Schema and TypeScript artifacts are synchronized from the Rust types crate.</p>
 <h2 id="audience">Audience<a class="headerlink" href="#audience" title="Permanent link">&para;</a></h2>
 <p>This docs set is designed for all three consumers:</p>
 <ul>

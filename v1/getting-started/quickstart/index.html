@@ -397,10 +397,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-create-a-canonical-policy-object" class="md-nav__link">
+  <a href="#2-create-a-versioned-policy-artifact" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Create a Canonical Policy Object
+        2. Create a Versioned Policy Artifact
       
     </span>
   </a>
@@ -710,6 +710,8 @@
       
         
       
+        
+      
     
     
     
@@ -827,6 +829,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../reference/typescript-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TypeScript Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../reference/governance-versioning/" class="md-nav__link">
         
   
@@ -893,10 +923,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-create-a-canonical-policy-object" class="md-nav__link">
+  <a href="#2-create-a-versioned-policy-artifact" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Create a Canonical Policy Object
+        2. Create a Versioned Policy Artifact
       
     </span>
   </a>
@@ -976,7 +1006,7 @@
 <li><code>execution_isolation</code></li>
 <li><code>decision</code></li>
 </ul>
-<h2 id="2-create-a-canonical-policy-object">2. Create a Canonical Policy Object<a class="headerlink" href="#2-create-a-canonical-policy-object" title="Permanent link">&para;</a></h2>
+<h2 id="2-create-a-versioned-policy-artifact">2. Create a Versioned Policy Artifact<a class="headerlink" href="#2-create-a-versioned-policy-artifact" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
 <span class="nt">risk_profile</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">standard</span>
 <span class="nt">write_scope</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">workspace_write</span>
@@ -984,8 +1014,17 @@
 <span class="nt">decision</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">prompt</span>
 </code></pre></div>
 <h2 id="3-validate-with-json-schema">3. Validate with JSON Schema<a class="headerlink" href="#3-validate-with-json-schema" title="Permanent link">&para;</a></h2>
-<p>Use <code>schema/policy-meta.v1.json</code> in CI and integration tests.</p>
-<div class="highlight"><pre><span></span><code>npx<span class="w"> </span>ajv<span class="w"> </span>validate<span class="w"> </span>-s<span class="w"> </span>schema/policy-meta.v1.json<span class="w"> </span>-d<span class="w"> </span>policy.json
+<p>Use the schema that matches your artifact shape:</p>
+<ul>
+<li><code>schema/policy-meta.v1.json</code> for reusable metadata fragments</li>
+<li><code>schema/policy-profile.v1.json</code> for versioned preset/profile objects</li>
+<li>checked-in schema files are synchronized from <code>rust/policy-meta/</code></li>
+<li>checked-in TypeScript bindings are synchronized to <code>bindings/policy-meta.d.ts</code></li>
+</ul>
+<div class="highlight"><pre><span></span><code>npx<span class="w"> </span>ajv<span class="w"> </span>validate<span class="w"> </span>-s<span class="w"> </span>schema/policy-profile.v1.json<span class="w"> </span>-d<span class="w"> </span>policy.yaml
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>rust/policy-meta
+cargo<span class="w"> </span>run<span class="w"> </span>--locked<span class="w"> </span>--bin<span class="w"> </span>export-artifacts<span class="w"> </span>--<span class="w"> </span>--check
 </code></pre></div>
 <h2 id="4-normalize-aliases-at-parse-boundary-only">4. Normalize Aliases at Parse Boundary Only<a class="headerlink" href="#4-normalize-aliases-at-parse-boundary-only" title="Permanent link">&para;</a></h2>
 <p>Accepted parse aliases:</p>
@@ -999,7 +1038,7 @@
 <h2 id="5-fail-closed-on-unknown-values">5. Fail Closed on Unknown Values<a class="headerlink" href="#5-fail-closed-on-unknown-values" title="Permanent link">&para;</a></h2>
 <p>Unknown enum values or unknown object properties should be rejected.</p>
 <h2 id="6-verify-profile-defaults">6. Verify Profile Defaults<a class="headerlink" href="#6-verify-profile-defaults" title="Permanent link">&para;</a></h2>
-<p>Baseline profile files are in <code>profiles/</code>:</p>
+<p>Baseline profile files are in <code>profiles/</code> and validate against <code>schema/policy-profile.v1.json</code>:</p>
 <ul>
 <li><code>safe.yaml</code></li>
 <li><code>standard.yaml</code></li>

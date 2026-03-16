@@ -570,6 +570,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#contract-layers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Contract Layers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#normative-rules" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -727,6 +738,8 @@
       
         
       
+        
+      
     
     
     
@@ -824,6 +837,34 @@
     
   
     Rust Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/typescript-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TypeScript Reference
   
 
     
@@ -971,6 +1012,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#contract-layers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Contract Layers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#normative-rules" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1012,6 +1064,11 @@
 </tr>
 </thead>
 <tbody>
+<tr>
+<td><code>version</code></td>
+<td><code>1</code></td>
+<td>Optional artifact metadata for versioned persisted/profile objects.</td>
+</tr>
 <tr>
 <td><code>risk_profile</code></td>
 <td><code>safe</code>, <code>standard</code>, <code>proactive</code>, <code>danger</code></td>
@@ -1065,6 +1122,12 @@
 <li><code>prompt</code></li>
 <li><code>prompt_strict</code></li>
 <li><code>deny</code></li>
+</ul>
+<h2 id="contract-layers">Contract Layers<a class="headerlink" href="#contract-layers" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>policy-meta.v1.json</code> is the reusable metadata fragment.</li>
+<li><code>policy-profile.v1.json</code> is the versioned preset/profile contract.</li>
+<li>Embedding APIs may require a subset of fields on top of the fragment.</li>
 </ul>
 <h2 id="normative-rules">Normative Rules<a class="headerlink" href="#normative-rules" title="Permanent link">&para;</a></h2>
 <ul>

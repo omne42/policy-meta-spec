@@ -16,7 +16,7 @@
         <link rel="prev" href="../schema-reference/">
       
       
-        <link rel="next" href="../governance-versioning/">
+        <link rel="next" href="../typescript-reference/">
       
       
         
@@ -597,6 +597,8 @@
       
         
       
+        
+      
     
     
     
@@ -746,10 +748,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#enums" class="md-nav__link">
+  <a href="#types" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Enums
+        Types
       
     </span>
   </a>
@@ -789,10 +791,49 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#schema-sync" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Schema Sync
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../typescript-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TypeScript Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -860,10 +901,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#enums" class="md-nav__link">
+  <a href="#types" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Enums
+        Types
       
     </span>
   </a>
@@ -903,6 +944,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#schema-sync" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Schema Sync
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -925,14 +977,20 @@
 
 <h1 id="rust-reference">Rust Reference<a class="headerlink" href="#rust-reference" title="Permanent link">&para;</a></h1>
 <p>Rust crate path: <code>rust/policy-meta/</code></p>
-<h2 id="enums">Enums<a class="headerlink" href="#enums" title="Permanent link">&para;</a></h2>
+<p>The Rust crate is the authoritative source for shared policy types.
+Checked-in JSON Schema and TypeScript artifacts are generated from these Rust types and kept in sync via <code>export-artifacts</code>.</p>
+<h2 id="types">Types<a class="headerlink" href="#types" title="Permanent link">&para;</a></h2>
 <ul>
+<li><code>SpecVersion</code></li>
 <li><code>RiskProfile</code></li>
 <li><code>WriteScope</code></li>
 <li><code>ExecutionIsolation</code></li>
 <li><code>Decision</code></li>
+<li><code>PolicyMetaV1</code></li>
+<li><code>PolicyProfileV1</code></li>
 </ul>
-<p>All use <code>serde(rename_all = "snake_case")</code> to preserve canonical wire tokens.</p>
+<p>Enums use <code>serde(rename_all = "snake_case")</code> to preserve canonical wire tokens.
+<code>SpecVersion</code> serializes as integer <code>1</code>.</p>
 <h2 id="alias-support-in-serde">Alias Support in Serde<a class="headerlink" href="#alias-support-in-serde" title="Permanent link">&para;</a></h2>
 <ul>
 <li><code>RiskProfile::Danger</code> accepts <code>yolo</code></li>
@@ -941,22 +999,31 @@
 </ul>
 <p>Serialization remains canonical.</p>
 <h2 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="k">use</span><span class="w"> </span><span class="n">policy_meta</span><span class="p">::{</span><span class="n">RiskProfile</span><span class="p">,</span><span class="w"> </span><span class="n">WriteScope</span><span class="p">};</span>
+<div class="highlight"><pre><span></span><code><span class="k">use</span><span class="w"> </span><span class="n">policy_meta</span><span class="p">::{</span><span class="n">ExecutionIsolation</span><span class="p">,</span><span class="w"> </span><span class="n">PolicyProfileV1</span><span class="p">,</span><span class="w"> </span><span class="n">RiskProfile</span><span class="p">,</span><span class="w"> </span><span class="n">WriteScope</span><span class="p">};</span>
 
-<span class="kd">let</span><span class="w"> </span><span class="n">risk</span><span class="p">:</span><span class="w"> </span><span class="nc">RiskProfile</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">serde_json</span><span class="p">::</span><span class="n">from_str</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\&quot;</span><span class="s">yolo</span><span class="se">\&quot;</span><span class="s">&quot;</span><span class="p">)</span><span class="o">?</span><span class="p">;</span>
-<span class="fm">assert_eq!</span><span class="p">(</span><span class="n">risk</span><span class="p">,</span><span class="w"> </span><span class="n">RiskProfile</span><span class="p">::</span><span class="n">Danger</span><span class="p">);</span>
-
-<span class="kd">let</span><span class="w"> </span><span class="n">scope</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">WriteScope</span><span class="p">::</span><span class="n">FullAccess</span><span class="p">;</span>
-<span class="fm">assert_eq!</span><span class="p">(</span><span class="n">serde_json</span><span class="p">::</span><span class="n">to_string</span><span class="p">(</span><span class="o">&amp;</span><span class="n">scope</span><span class="p">)</span><span class="o">?</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\&quot;</span><span class="s">full_access</span><span class="se">\&quot;</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="kd">let</span><span class="w"> </span><span class="n">profile</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PolicyProfileV1</span><span class="p">::</span><span class="n">new</span><span class="p">(</span>
+<span class="w">    </span><span class="n">RiskProfile</span><span class="p">::</span><span class="n">Standard</span><span class="p">,</span>
+<span class="w">    </span><span class="n">WriteScope</span><span class="p">::</span><span class="n">WorkspaceWrite</span><span class="p">,</span>
+<span class="w">    </span><span class="n">ExecutionIsolation</span><span class="p">::</span><span class="n">BestEffort</span><span class="p">,</span>
+<span class="p">);</span>
+<span class="fm">assert_eq!</span><span class="p">(</span><span class="n">serde_json</span><span class="p">::</span><span class="n">to_string</span><span class="p">(</span><span class="o">&amp;</span><span class="n">profile</span><span class="p">)</span><span class="o">?</span><span class="p">,</span><span class="w"> </span><span class="s">r#&quot;{&quot;version&quot;:1,&quot;risk_profile&quot;:&quot;standard&quot;,&quot;write_scope&quot;:&quot;workspace_write&quot;,&quot;execution_isolation&quot;:&quot;best_effort&quot;}&quot;#</span><span class="p">);</span>
 <span class="p">#</span><span class="w"> </span><span class="nb">Ok</span><span class="p">::</span><span class="o">&lt;</span><span class="p">(),</span><span class="w"> </span><span class="nb">Box</span><span class="o">&lt;</span><span class="k">dyn</span><span class="w"> </span><span class="n">std</span><span class="p">::</span><span class="n">error</span><span class="p">::</span><span class="n">Error</span><span class="o">&gt;&gt;</span><span class="p">(())</span>
 </code></pre></div>
+<p><code>PolicyMetaV1</code> provides fluent fragment builders such as <code>with_execution_isolation(...)</code>,
+and <code>PolicyProfileV1</code> can be projected back into the reusable fragment with
+<code>PolicyMetaV1::from(&amp;profile)</code>.</p>
 <h2 id="integration-guidance">Integration Guidance<a class="headerlink" href="#integration-guidance" title="Permanent link">&para;</a></h2>
 <ol>
 <li>parse with alias support,</li>
-<li>normalize to canonical enums,</li>
+<li>normalize to canonical enums or <code>PolicyMetaV1</code> / <code>PolicyProfileV1</code>,</li>
 <li>persist canonical values only,</li>
-<li>evaluate runtime logic on canonical enums.</li>
+<li>evaluate runtime logic on canonical values.</li>
 </ol>
+<h2 id="schema-sync">Schema Sync<a class="headerlink" href="#schema-sync" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>rust/policy-meta
+cargo<span class="w"> </span>run<span class="w"> </span>--locked<span class="w"> </span>--bin<span class="w"> </span>export-artifacts
+cargo<span class="w"> </span>run<span class="w"> </span>--locked<span class="w"> </span>--bin<span class="w"> </span>export-artifacts<span class="w"> </span>--<span class="w"> </span>--check
+</code></pre></div>
 
 
 

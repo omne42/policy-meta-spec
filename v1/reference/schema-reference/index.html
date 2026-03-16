@@ -597,6 +597,8 @@
       
         
       
+        
+      
     
     
     
@@ -729,10 +731,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#top-level-rules" class="md-nav__link">
+  <a href="#fragment-schema-semantics" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Top-Level Rules
+        Fragment Schema Semantics
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#profile-schema-semantics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Profile Schema Semantics
       
     </span>
   </a>
@@ -785,6 +798,34 @@
     
   
     Rust Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../typescript-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TypeScript Reference
   
 
     
@@ -871,10 +912,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#top-level-rules" class="md-nav__link">
+  <a href="#fragment-schema-semantics" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Top-Level Rules
+        Fragment Schema Semantics
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#profile-schema-semantics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Profile Schema Semantics
       
     </span>
   </a>
@@ -924,7 +976,12 @@
 
 
 <h1 id="schema-reference">Schema Reference<a class="headerlink" href="#schema-reference" title="Permanent link">&para;</a></h1>
-<p>Canonical schema file: <code>schema/policy-meta.v1.json</code></p>
+<p>Canonical fragment schema file: <code>schema/policy-meta.v1.json</code>
+Profile schema file: <code>schema/policy-profile.v1.json</code>
+Related TypeScript binding file: <code>bindings/policy-meta.d.ts</code></p>
+<p>Both checked-in schema files are synchronized from the Rust types crate in <code>rust/policy-meta/</code>.
+Use <code>cargo run --locked --bin export-artifacts</code> to refresh generated artifacts and
+<code>cargo run --locked --bin export-artifacts -- --check</code> to verify they are in sync.</p>
 <h2 id="schema-identity">Schema Identity<a class="headerlink" href="#schema-identity" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;$schema&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://json-schema.org/draft/2020-12/schema&quot;</span><span class="p">,</span>
@@ -932,14 +989,27 @@
 <span class="w">  </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PolicyMetaV1&quot;</span>
 <span class="p">}</span>
 </code></pre></div>
-<h2 id="top-level-rules">Top-Level Rules<a class="headerlink" href="#top-level-rules" title="Permanent link">&para;</a></h2>
+<h2 id="fragment-schema-semantics">Fragment Schema Semantics<a class="headerlink" href="#fragment-schema-semantics" title="Permanent link">&para;</a></h2>
 <ul>
 <li><code>type: object</code></li>
 <li><code>additionalProperties: false</code></li>
+<li>canonical policy fields are reusable and therefore optional by default</li>
+<li><code>version</code> is allowed as optional artifact metadata with <code>const: 1</code></li>
 </ul>
 <p>Unknown keys are invalid.</p>
+<h2 id="profile-schema-semantics">Profile Schema Semantics<a class="headerlink" href="#profile-schema-semantics" title="Permanent link">&para;</a></h2>
+<ul>
+<li>builds on <code>policy-meta.v1.json</code></li>
+<li>inherits the fragment property domain and only adds profile-level required fields</li>
+<li>requires <code>version</code></li>
+<li>requires <code>risk_profile</code></li>
+<li>requires <code>write_scope</code></li>
+<li>requires <code>execution_isolation</code></li>
+</ul>
+<p>Treat the checked-in JSON files as synchronized artifacts, not independent hand-edited contracts.</p>
 <h2 id="enum-domains">Enum Domains<a class="headerlink" href="#enum-domains" title="Permanent link">&para;</a></h2>
 <ul>
+<li><code>version</code>: <code>1</code></li>
 <li><code>risk_profile</code>: <code>safe | standard | proactive | danger</code></li>
 <li><code>write_scope</code>: <code>read_only | workspace_write | full_access</code></li>
 <li><code>execution_isolation</code>: <code>none | best_effort | strict</code></li>
