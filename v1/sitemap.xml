@@ -2,58 +2,70 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://omne42.github.io/policy-meta-spec/v1/</loc>
-         <lastmod>2026-03-16</lastmod>
+         <lastmod>2026-03-26</lastmod>
+    </url>
+    <url>
+         <loc>https://omne42.github.io/policy-meta-spec/v1/docs-system-map/</loc>
+         <lastmod>2026-03-26</lastmod>
+    </url>
+    <url>
+         <loc>https://omne42.github.io/policy-meta-spec/v1/architecture/source-layout/</loc>
+         <lastmod>2026-03-26</lastmod>
+    </url>
+    <url>
+         <loc>https://omne42.github.io/policy-meta-spec/v1/architecture/system-boundaries/</loc>
+         <lastmod>2026-03-26</lastmod>
     </url>
     <url>
          <loc>https://omne42.github.io/policy-meta-spec/v1/getting-started/</loc>
-         <lastmod>2026-03-16</lastmod>
+         <lastmod>2026-03-26</lastmod>
     </url>
     <url>
          <loc>https://omne42.github.io/policy-meta-spec/v1/getting-started/quickstart/</loc>
-         <lastmod>2026-03-16</lastmod>
+         <lastmod>2026-03-26</lastmod>
     </url>
     <url>
          <loc>https://omne42.github.io/policy-meta-spec/v1/guides/</loc>
-         <lastmod>2026-03-16</lastmod>
+         <lastmod>2026-03-26</lastmod>
     </url>
     <url>
          <loc>https://omne42.github.io/policy-meta-spec/v1/guides/ai-agent-consumption/</loc>
-         <lastmod>2026-03-16</lastmod>
+         <lastmod>2026-03-26</lastmod>
     </url>
     <url>
          <loc>https://omne42.github.io/policy-meta-spec/v1/guides/alias-normalization/</loc>
-         <lastmod>2026-03-16</lastmod>
+         <lastmod>2026-03-26</lastmod>
     </url>
     <url>
          <loc>https://omne42.github.io/policy-meta-spec/v1/guides/core-model/</loc>
-         <lastmod>2026-03-16</lastmod>
+         <lastmod>2026-03-26</lastmod>
     </url>
     <url>
          <loc>https://omne42.github.io/policy-meta-spec/v1/guides/migration-v1/</loc>
-         <lastmod>2026-03-16</lastmod>
+         <lastmod>2026-03-26</lastmod>
     </url>
     <url>
          <loc>https://omne42.github.io/policy-meta-spec/v1/guides/risk-profiles/</loc>
-         <lastmod>2026-03-16</lastmod>
+         <lastmod>2026-03-26</lastmod>
     </url>
     <url>
          <loc>https://omne42.github.io/policy-meta-spec/v1/reference/</loc>
-         <lastmod>2026-03-16</lastmod>
+         <lastmod>2026-03-26</lastmod>
     </url>
     <url>
          <loc>https://omne42.github.io/policy-meta-spec/v1/reference/governance-versioning/</loc>
-         <lastmod>2026-03-16</lastmod>
+         <lastmod>2026-03-26</lastmod>
     </url>
     <url>
          <loc>https://omne42.github.io/policy-meta-spec/v1/reference/rust-reference/</loc>
-         <lastmod>2026-03-16</lastmod>
+         <lastmod>2026-03-26</lastmod>
     </url>
     <url>
          <loc>https://omne42.github.io/policy-meta-spec/v1/reference/schema-reference/</loc>
-         <lastmod>2026-03-16</lastmod>
+         <lastmod>2026-03-26</lastmod>
     </url>
     <url>
          <loc>https://omne42.github.io/policy-meta-spec/v1/reference/typescript-reference/</loc>
-         <lastmod>2026-03-16</lastmod>
+         <lastmod>2026-03-26</lastmod>
     </url>
 </urlset>

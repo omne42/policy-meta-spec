@@ -10,26 +10,24 @@
       
       
       
-        <link rel="canonical" href="https://omne42.github.io/policy-meta-spec/v1/">
+        <link rel="canonical" href="https://omne42.github.io/policy-meta-spec/v1/architecture/system-boundaries/">
       
       
-      
-        <link rel="next" href="getting-started/">
       
       
         
       
       
-      <link rel="icon" href="assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
-        <title>policy-meta-spec</title>
+        <title>System Boundaries - policy-meta-spec</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
       
       
 
@@ -48,7 +46,7 @@
       
     
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -66,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#introduction" class="md-skip">
+        <a href="#system-boundaries" class="md-skip">
           Skip to content
         </a>
       
@@ -86,7 +84,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="policy-meta-spec" class="md-header__button md-logo" aria-label="policy-meta-spec" data-md-component="logo">
+    <a href="../.." title="policy-meta-spec" class="md-header__button md-logo" aria-label="policy-meta-spec" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -106,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Introduction
+              System Boundaries
             
           </span>
         </div>
@@ -196,7 +194,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="policy-meta-spec" class="md-nav__button md-logo" aria-label="policy-meta-spec" data-md-component="logo">
+    <a href="../.." title="policy-meta-spec" class="md-nav__button md-logo" aria-label="policy-meta-spec" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -223,37 +221,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Introduction
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="." class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -269,70 +240,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#why-this-spec-exists" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Why This Spec Exists
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#audience" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Audience
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#scope" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Scope
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#start-here" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Start Here
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -369,7 +276,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="getting-started/" class="md-nav__link ">
+            <a href="../../getting-started/" class="md-nav__link ">
               
   
   
@@ -413,7 +320,7 @@
   
   
     <li class="md-nav__item">
-      <a href="getting-started/quickstart/" class="md-nav__link">
+      <a href="../../getting-started/quickstart/" class="md-nav__link">
         
   
   
@@ -481,7 +388,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="guides/" class="md-nav__link ">
+            <a href="../../guides/" class="md-nav__link ">
               
   
   
@@ -525,7 +432,7 @@
   
   
     <li class="md-nav__item">
-      <a href="guides/core-model/" class="md-nav__link">
+      <a href="../../guides/core-model/" class="md-nav__link">
         
   
   
@@ -553,7 +460,7 @@
   
   
     <li class="md-nav__item">
-      <a href="guides/risk-profiles/" class="md-nav__link">
+      <a href="../../guides/risk-profiles/" class="md-nav__link">
         
   
   
@@ -581,7 +488,7 @@
   
   
     <li class="md-nav__item">
-      <a href="guides/alias-normalization/" class="md-nav__link">
+      <a href="../../guides/alias-normalization/" class="md-nav__link">
         
   
   
@@ -609,7 +516,7 @@
   
   
     <li class="md-nav__item">
-      <a href="guides/migration-v1/" class="md-nav__link">
+      <a href="../../guides/migration-v1/" class="md-nav__link">
         
   
   
@@ -637,7 +544,7 @@
   
   
     <li class="md-nav__item">
-      <a href="guides/ai-agent-consumption/" class="md-nav__link">
+      <a href="../../guides/ai-agent-consumption/" class="md-nav__link">
         
   
   
@@ -703,7 +610,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="reference/" class="md-nav__link ">
+            <a href="../../reference/" class="md-nav__link ">
               
   
   
@@ -747,7 +654,7 @@
   
   
     <li class="md-nav__item">
-      <a href="reference/schema-reference/" class="md-nav__link">
+      <a href="../../reference/schema-reference/" class="md-nav__link">
         
   
   
@@ -775,7 +682,7 @@
   
   
     <li class="md-nav__item">
-      <a href="reference/rust-reference/" class="md-nav__link">
+      <a href="../../reference/rust-reference/" class="md-nav__link">
         
   
   
@@ -803,7 +710,7 @@
   
   
     <li class="md-nav__item">
-      <a href="reference/typescript-reference/" class="md-nav__link">
+      <a href="../../reference/typescript-reference/" class="md-nav__link">
         
   
   
@@ -831,7 +738,7 @@
   
   
     <li class="md-nav__item">
-      <a href="reference/governance-versioning/" class="md-nav__link">
+      <a href="../../reference/governance-versioning/" class="md-nav__link">
         
   
   
@@ -886,10 +793,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#why-this-spec-exists" class="md-nav__link">
+  <a href="#goal" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Why This Spec Exists
+        Goal
       
     </span>
   </a>
@@ -897,10 +804,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#audience" class="md-nav__link">
+  <a href="#this-repository-owns" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Audience
+        This Repository Owns
       
     </span>
   </a>
@@ -908,10 +815,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#scope" class="md-nav__link">
+  <a href="#this-repository-does-not-own" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Scope
+        This Repository Does Not Own
       
     </span>
   </a>
@@ -919,10 +826,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#start-here" class="md-nav__link">
+  <a href="#relationship-to-other-repositories" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Start Here
+        Relationship To Other Repositories
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#boundary-rule" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Boundary Rule
       
     </span>
   </a>
@@ -949,52 +867,39 @@
   
 
 
-<h1 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h1>
-<p><code>policy-meta-spec</code> is the canonical semantic contract for policy metadata shared by:</p>
+<h1 id="system-boundaries">System Boundaries<a class="headerlink" href="#system-boundaries" title="Permanent link">&para;</a></h1>
+<h2 id="goal">Goal<a class="headerlink" href="#goal" title="Permanent link">&para;</a></h2>
+<p><code>policy-meta-spec</code> is the canonical semantic contract for shared policy metadata.</p>
+<p>It exists to keep naming, meaning and machine-readable artifacts aligned across repositories without coupling those repositories to one runtime implementation.</p>
+<h2 id="this-repository-owns">This Repository Owns<a class="headerlink" href="#this-repository-owns" title="Permanent link">&para;</a></h2>
 <ul>
-<li><code>omne-execution-gateway</code></li>
-<li><code>safe-fs-tools</code></li>
+<li>canonical field names and meanings</li>
+<li>parse-time alias rules</li>
+<li>versioning and stability rules</li>
+<li>JSON Schema artifacts</li>
+<li>TypeScript bindings</li>
+<li>baseline profile examples</li>
+<li>minimal Rust types crate used to export synchronized artifacts</li>
+</ul>
+<h2 id="this-repository-does-not-own">This Repository Does Not Own<a class="headerlink" href="#this-repository-does-not-own" title="Permanent link">&para;</a></h2>
+<ul>
+<li>runtime policy engines</li>
+<li>sandbox implementations</li>
+<li>transport APIs</li>
+<li>product-specific approval workflows</li>
+</ul>
+<h2 id="relationship-to-other-repositories">Relationship To Other Repositories<a class="headerlink" href="#relationship-to-other-repositories" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>omne-runtime/omne-execution-gateway</code></li>
+<li>consumes policy semantics, but does not define them here.</li>
 <li><code>omne-agent</code></li>
+<li>reuses canonical values such as <code>write_scope</code> and <code>execution_isolation</code>.</li>
+<li><code>safe-fs-tools</code></li>
+<li>reuses the same semantic vocabulary.</li>
 </ul>
-<p>It defines stable naming, strict canonical values, alias normalization rules, baseline profiles, and machine-readable schema and TypeScript artifacts.</p>
-<h2 id="why-this-spec-exists">Why This Spec Exists<a class="headerlink" href="#why-this-spec-exists" title="Permanent link">&para;</a></h2>
-<p>Distributed agent systems often diverge on policy token naming and meaning. Once divergence happens, interoperability and auditability break down quickly.</p>
-<p>This repository is the single source of truth for policy metadata semantics.</p>
-<p>The source of truth has two contract layers:</p>
-<ul>
-<li><code>policy-meta.v1.json</code>: reusable canonical metadata fragment</li>
-<li><code>policy-profile.v1.json</code>: versioned preset/profile contract</li>
-</ul>
-<p>Checked-in JSON Schema and TypeScript artifacts are synchronized from the Rust types crate.</p>
-<h2 id="audience">Audience<a class="headerlink" href="#audience" title="Permanent link">&para;</a></h2>
-<p>This docs set is designed for all three consumers:</p>
-<ul>
-<li>Humans: conceptual clarity and migration guidance.</li>
-<li>Agents: deterministic tokens and strict normalization rules.</li>
-<li>Tools: schema contract and versioned compatibility expectations.</li>
-</ul>
-<h2 id="scope">Scope<a class="headerlink" href="#scope" title="Permanent link">&para;</a></h2>
-<p>In scope:</p>
-<ul>
-<li>canonical field names and enum values,</li>
-<li>parse-time alias handling,</li>
-<li>schema-level interoperability contract,</li>
-<li>baseline profile presets,</li>
-<li>migration and stability rules.</li>
-</ul>
-<p>Out of scope:</p>
-<ul>
-<li>runtime policy engine internals,</li>
-<li>transport API definitions,</li>
-<li>platform-specific sandbox implementation details.</li>
-</ul>
-<h2 id="start-here">Start Here<a class="headerlink" href="#start-here" title="Permanent link">&para;</a></h2>
-<ol>
-<li><a href="getting-started/quickstart/">Quickstart</a></li>
-<li><a href="guides/core-model/">Core Model</a></li>
-<li><a href="guides/risk-profiles/">Risk Profiles</a></li>
-<li><a href="reference/schema-reference/">Schema Reference</a></li>
-</ol>
+<h2 id="boundary-rule">Boundary Rule<a class="headerlink" href="#boundary-rule" title="Permanent link">&para;</a></h2>
+<p>If a change alters the meaning of a canonical token, it belongs here.</p>
+<p>If a change only alters how one product interprets or enforces that token at runtime, it belongs in that product or runtime repository instead.</p>
 
 
 
@@ -1050,10 +955,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.sections", "navigation.indexes", "navigation.top", "content.code.copy"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.indexes", "navigation.top", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>
