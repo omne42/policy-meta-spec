@@ -2,7 +2,7 @@
 
 `policy-meta-spec` is the canonical semantic contract for policy metadata shared by:
 
-- `agent-exec-gateway`
+- `omne-execution-gateway`
 - `safe-fs-tools`
 - `omne-agent`
 

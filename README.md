@@ -1,6 +1,6 @@
 # policy-meta-spec
 
-Canonical policy meta semantics shared by `agent-exec-gateway`, `safe-fs-tools`, and `omne-agent`.
+Canonical policy meta semantics shared by `omne-execution-gateway`, `safe-fs-tools`, and `omne-agent`.
 
 ## What This Repository Contains
 
@@ -26,6 +26,8 @@ Checked-in schema files and TypeScript bindings are synchronized from the Rust t
 
 ## Documentation (Automated)
 
+- Docs entrypoint: `docs/README.md`
+- Docs system map: `docs/docs-system-map.md`
 - Docs source: `docs/`
 - MkDocs config: `mkdocs.yml`
 - Auto deployment workflow: `.github/workflows/docs-pages.yml`
@@ -45,6 +47,7 @@ mkdocs build --strict
 (cd rust/policy-meta && cargo run --locked --bin export-artifacts)
 (cd rust/policy-meta && cargo run --locked --bin export-artifacts -- --check)
 (cd rust/policy-meta && cargo test --locked)
+./scripts/check-docs-system.sh
 pip install jsonschema PyYAML
 python scripts/validate_spec.py
 ```
